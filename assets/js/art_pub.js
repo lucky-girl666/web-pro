@@ -60,7 +60,7 @@ $(function () {
         // fd.forEach(function (v,k) {
         //     console.log(k,v);
         // })
-        fd.append('state', state)
+        // fd.append('state', state)
         $image
             .cropper('getCroppedCanvas', { // 创建一个 Canvas 画布
                 width: 400,
@@ -86,7 +86,8 @@ $(function () {
           // 必须添加以下两个配置项
           contentType: false,
           processData: false,
-          success: function(res) {
+            success: function (res) {
+              console.log(res);
             if (res.status !== 0) {
               return layer.msg('发布文章失败！')
             }

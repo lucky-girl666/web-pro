@@ -18,8 +18,9 @@ $(function () {
         }
     })
 
-    $('.layui-form').on('submit', function (e) {
+    $('#password_from').on('submit', function (e) {
         e.preventDefault()
+        console.log($(this).serialize());
         $.ajax({
             method:'POST',
             url: '/my/updatepwd',
@@ -28,12 +29,13 @@ $(function () {
             //     Authorization:localStorage.getItem('token')
             // },
             success: function (res) {
+                console.log(res);
                 if (res.status !== 0) {
                     return layui.layer.msg('更新密码失败！')
                 }
                 layui.layer.msg('更新密码成功！')
                 // 重置表单
-                $('.layui-form')[0].reset()
+                $('#password_from')[0].reset()
             },
             // complete: function(res) {
             //     // console.log('执行了 complete 回调：')

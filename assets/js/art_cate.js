@@ -56,7 +56,7 @@ $(function () {
             content: $('#dialog-edit').html()
         })
 
-        var id = $(this).attr('data-Id')
+        var id = $(this).attr('data-id')
         $.ajax({
             method: 'GET',
             url: '/my/article/cates/' + id,

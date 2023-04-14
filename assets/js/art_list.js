@@ -65,6 +65,7 @@ $(function () {
                 $('[name=cate_id]').html(tpl_cate)
                 // 通过 layui 重新渲染表单区域的UI结构
                 form.render()
+                
             }
         })
     }
@@ -80,12 +81,12 @@ $(function () {
     })
 
     // 分页
-    function renderCate(total, first) {
+    function renderCate(total) {
          // 可以通过 first 的值，来判断是通过哪种方式，触发的 jump 回调
         // 如果 first 的值为 true，证明是方式2触发的
         // 否则就是方式1触发的
         laypage.render({
-            elem: 'pageBox', // 分页容器的 Id
+            elem: 'pageBox', // 分页容器的 id
             count: total, // 总数据条数
             limit: q.pagesize, // 每页显示几条数据
             curr: q.pagenum, // 设置默认被选中的分页

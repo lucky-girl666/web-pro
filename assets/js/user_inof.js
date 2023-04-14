@@ -17,14 +17,15 @@ $(function () {
     })
 
     // 提交修改
-    $('.layui-form').on('submit', function (e) {
+    $('#userinfo_from').on('submit', function (e) {
         e.preventDefault()
-
+        // console.log( $(this).serialize());
         $.ajax({
             method: 'POST',
             url: '/my/userinfo',
             data: $(this).serialize(),
             success: function (res) {
+                // console.log(res);
                 if (res.status !== 0) {
                     return layui.layer.msg('更新用户信息失败!')
                 }
@@ -43,6 +44,7 @@ function getUserInof() {
         method: 'GET',
         url: '/my/userinfo',
         success: function (res) {
+            console.log(res);
             if (res.status !== 0) {
                 return layui.layer.msg(res.message)
             }
